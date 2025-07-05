@@ -1,0 +1,43 @@
+[package]
+name = "auth_service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+
+
+
+# lib
+dev_proto={path = "../dev_proto"}
+dev_core={path = "../dev_core"}
+dev_infra={path = "../dev_infra"}
+dev_utils={path = "../dev_utils"}
+
+
+# workspace
+tracing.workspace=true
+tracing-futures.workspace=true
+tracing-log.workspace=true
+tracing-subscriber.workspace=true
+
+serde_qs.workspace=true
+serde_json.workspace=true
+serde.workspace=true
+
+validator.workspace=true
+validator_derive.workspace=true
+uuid.workspace=true
+chrono.workspace=true
+derive_more.workspace=true
+
+
+tokio-util.workspace=true
+tokio.workspace=true
+tonic.workspace=true
+prost.workspace=true
+prost-types.workspace=true
+
+# workspace
+[build-dependencies]
+tonic-build.workspace=true

@@ -1,0 +1,33 @@
+[config]
+skip_core_tasks = true
+
+[env]
+CARGO_MAKE_WORKSPACE_MODE = "root"  # Chỉ chạy task ở thư mục gốc
+
+[tasks.clear-cache]
+command = "cargo"
+args = ["make", "--clear-cache"]
+
+[tasks.run-api-gateway]
+command = "cargo"
+args = ["run", "-p", "api_gateway"]
+
+[tasks.run-auth-service]
+command = "cargo"
+args = ["run", "-p", "auth_service"]
+
+[tasks.run-project-service]
+command = "cargo"
+args = ["run", "-p", "project_service"]
+
+[tasks.run]
+description = "Run all services in parallel"
+run_task = [
+    { name = "run-api-gateway", parallel = true },
+    { name = "run-auth-service", parallel = true },
+    { name = "run-project-service", parallel = true },
+]
+fork = true
+
+[tasks.workspace]
+script = ["!cargo make --makefile Makefile.toml run"]

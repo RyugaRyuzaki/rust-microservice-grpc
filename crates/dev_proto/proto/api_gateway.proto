@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package api_gateway;
+
+import "auth.proto";
+
+service ApiGateway {
+  rpc Login(auth.LoginRequest) returns (auth.LoginResponse);
+}

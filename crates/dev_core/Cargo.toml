@@ -1,0 +1,28 @@
+[package]
+name = "dev_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "4.9.0"
+color-eyre = "0.6.3"
+eyre = "0.6.12"
+redis = {version = "0.32.0",features = ["tokio-comp"]}
+sqlx = { version = "0.8.3",  features = [ "macros", "postgres", "runtime-tokio-rustls", "uuid", "chrono", "json",  "bigdecimal" ] }
+
+tracing.workspace=true
+tracing-futures.workspace=true
+tracing-log.workspace=true
+tracing-subscriber.workspace=true
+
+serde_qs.workspace=true
+serde_json.workspace=true
+serde.workspace=true
+
+validator.workspace=true
+validator_derive.workspace=true
+uuid.workspace=true
+chrono.workspace=true
+derive_more.workspace=true
+
+

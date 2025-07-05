@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package error_proto;
+
+message AppProtoError {
+  string message = 1;     
+  int32 code = 2;          
+  string service = 3;       
+  string trace_id = 4;      
+  repeated string details = 5; 
+}
+
+message AppProtoResponse {
+  oneof result {
+    bytes success_data = 1; 
+    AppProtoError error = 2;    
+  }
+}
