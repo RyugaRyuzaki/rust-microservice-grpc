@@ -10,6 +10,11 @@ eyre = "0.6.12"
 redis = {version = "0.32.0",features = ["tokio-comp"]}
 sqlx = { version = "0.8.3",  features = [ "macros", "postgres", "runtime-tokio-rustls", "uuid", "chrono", "json",  "bigdecimal" ] }
 
+# lib
+dev_proto={path = "../dev_proto"}
+dev_infra={path = "../dev_infra"}
+dev_utils={path = "../dev_utils"}
+
 tracing.workspace=true
 tracing-futures.workspace=true
 tracing-log.workspace=true
@@ -24,5 +29,14 @@ validator_derive.workspace=true
 uuid.workspace=true
 chrono.workspace=true
 derive_more.workspace=true
+
+tonic.workspace=true
+prost.workspace=true
+prost-types.workspace=true
+
+# workspace
+[build-dependencies]
+glob.workspace=true
+tonic-build.workspace=true
 
 

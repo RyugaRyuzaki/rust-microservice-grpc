@@ -752,12 +752,20 @@ dependencies = [
  "chrono",
  "color-eyre",
  "derive_more",
+ "dev_infra",
+ "dev_proto",
+ "dev_utils",
  "eyre",
+ "glob",
+ "prost",
+ "prost-types",
  "redis",
  "serde",
  "serde_json",
  "serde_qs",
  "sqlx",
+ "tonic",
+ "tonic-build",
  "tracing",
  "tracing-futures",
  "tracing-log 0.1.4",
@@ -883,10 +891,6 @@ dependencies = [
  "parking",
  "pin-project-lite",
 ]
-
-[[package]]
-name = "example"
-version = "0.1.0"
 
 [[package]]
 name = "eyre"

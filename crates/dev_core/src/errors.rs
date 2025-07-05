@@ -12,8 +12,8 @@ use validator::ValidationErrors;
 
 #[derive(Debug, Serialize)]
 pub struct AppError {
-    message: String,    // The error message
-    code: AppErrorCode, // The error code that classifies the type of error
+    pub message: String,    // The error message
+    pub code: AppErrorCode, // The error code that classifies the type of error
 }
 
 impl AppError {
@@ -30,7 +30,7 @@ impl AppError {
 }
 
 #[derive(Debug, PartialEq, Eq, Clone)]
-pub struct AppErrorCode(i32);
+pub struct AppErrorCode(pub i32);
 
 impl AppErrorCode {
     // Create an AppError from an AppErrorCode with a custom message
